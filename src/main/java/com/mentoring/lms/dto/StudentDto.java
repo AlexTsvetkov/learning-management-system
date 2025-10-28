@@ -7,4 +7,5 @@ import jakarta.validation.constraints.NotNull;
 public record StudentDto(Long id,
                          @NotBlank String name,
                          @Email @NotBlank String email,
-                         @NotNull Long coins) {}
+                         @NotNull Long coins) {
+}

@@ -11,6 +11,7 @@ import java.util.List;
 
 public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
     List<Enrollment> findByCourse(Course course);
+
     boolean existsByStudentAndCourse(Student student, Course course);
 
     @Query("select e from Enrollment e join fetch e.student where e.course = :course")

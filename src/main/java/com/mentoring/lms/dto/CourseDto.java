@@ -9,4 +9,5 @@ public record CourseDto(Long id,
                         @NotBlank String title,
                         String description,
                         @NotNull Long priceCoins,
-                        @NotNull LocalDate startDate) {}
+                        @NotNull LocalDate startDate) {
+}
