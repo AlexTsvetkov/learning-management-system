@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: lms
+  datasource:
+    url: jdbc:h2:mem:lms;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+
+  mail:
+    host: smtp.mailtrap.io
+    port: 2525
+    username: YOUR_MAILTRAP_USERNAME
+    password: YOUR_MAILTRAP_PASSWORD
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,loggers
+
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: DEBUG
